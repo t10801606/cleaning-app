@@ -17,3 +17,18 @@
  * {
   box-sizing: border-box;
 }
+
+.wrapper {
+  display: flex;
+}
+
+.left-side {
+  width: 50vw;
+  height: 100vh;
+  background-color: rgb(176,222,236);
+}
+
+.right-side {
+  width: 50vh;
+  height: 100vh;
+}
