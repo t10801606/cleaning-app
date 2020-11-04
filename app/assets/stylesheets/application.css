@@ -60,7 +60,7 @@ header {
 
 .inner {
   width: 1024px;
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 .nav {
@@ -69,6 +69,26 @@ header {
   justify-content: space-between;
 }
 
+.logo {
+  margin-left: 3vw;
+}
+
+.nav__btn {
+  margin-right: 3vw;
+}
+
+
+/*---------- ユーザー新規登録のフォーム ----------*/
+
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.field {
+  margin: 10px 0;
+}
 /* ----------トップページ---------- */
 
 .wrapper {
