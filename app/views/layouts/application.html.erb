@@ -4,12 +4,25 @@
     <title>CleaningApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <div class ="inner">
+        <div class ="nav">
+          <div class ="nav-left">
+            <a href ="#"><img src ="#" alt ="トップページ"></a>
+          </div>
+          <div class ="nav-right">
+            <a href ="#">ログイン</a>
+            <a href ="#">新規登録</a>
+          </div>
+        </div>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

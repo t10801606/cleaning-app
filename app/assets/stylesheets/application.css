@@ -13,3 +13,87 @@
  *= require_tree .
  *= require_self
  */
+
+ /* リセットCSS */
+ * {
+  box-sizing: border-box;
+  color: rgb(77,77,77);
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+/* ヘッダー */
+
+header {
+  background-color: #f1f8fe;
+  padding: 20px 0;
+}
+
+.inner {
+  width: 1024px;
+  margin: 0 auto
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ----------トップページ---------- */
+
+.wrapper {
+  display: flex;
+  margin: 0 auto;
+}
+
+/* ----------投稿画像のトップページリンク---------- */
+
+.left-side {
+  width: 50vw;
+  height: 100vh;
+  background-color: rgb(176,222,236);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* ----------掃除提案のトップページリンク---------- */
+.right-side {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
