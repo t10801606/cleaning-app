@@ -1,2 +1,17 @@
-＜投稿画像詳細ページ＞
 ＜投稿画像編集ページ＞
+<div class="desk-show">
+  <div class="desk-box">
+    <h2 class="title">
+      <%= @desk.title %>
+    </h2>
+    <div class='desk-img-content'>
+      <%= image_tag @desk.image ,class:"desk-box-img" %>
+    </div>
+    <div class="desk-concept-box">
+      <span class="desk-price">
+        <%= "#{@desk.concept}"%>
+      </span>
+    </div>
+  
+  </div>
+</div>

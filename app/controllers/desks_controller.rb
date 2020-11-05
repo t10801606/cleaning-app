@@ -1,5 +1,5 @@
 class DesksController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @desks = Desk.includes(:user).order("created_at DESC")
   end
@@ -18,7 +18,19 @@ class DesksController < ApplicationController
   end
 
   def show
-    
+    @desk = Desk.find(params[:id])
+  end
+
+  def edit
+    @desk = Desk.find(params[:id])
+  end
+
+  def update
+    if desk_data.update(desk_params)
+      redirect_to desks_path
+    else
+      render :edit
+    end
   end
 
   private
