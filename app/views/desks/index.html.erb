@@ -1,1 +1,45 @@
 <%= link_to "画像を投稿する", new_desk_path%>
+
+<%# 画像一覧 %>
+<div class='desk-contents'>
+  <ul class='desk-lists'>
+
+    <% @desks.each do |desk| %>
+      <li class='list'>
+        <%= link_to "#" do %>
+          <div class='desk-img-content'>
+            <%= image_tag desk.image, class: "desk-img" %>
+          </div>
+          <div class='desk-info'>
+            <h3 class='desk-tiutle'>
+            <%= desk.title %>
+          </h3>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+
+    <%# 商品がない場合のダミー %>
+    <% if @desks.empty? %>
+      <li class='list'>
+        <%= link_to '#' do %>
+          <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "desk-img" %>
+          <div class='desk-info'>
+            <h3 class='desk-title'>
+            商品を出品してね！
+            </h3>
+            <div class='desk-price'>
+              <span>99999999円<br>(税込み)</span>
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'>0</span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+    <%# /商品がない場合のダミー %>
+  </ul>
+</div>
+<%# /画像一覧 %>
