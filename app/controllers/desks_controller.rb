@@ -17,6 +17,10 @@ class DesksController < ApplicationController
     end
   end
 
+  def show
+    
+  end
+
   private
 
   def desk_params

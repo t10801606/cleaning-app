@@ -6,7 +6,7 @@
 
     <% @desks.each do |desk| %>
       <li class='list'>
-        <%= link_to "#" do %>
+        <%= link_to desk_path(desk.id) do %>
           <div class='desk-img-content'>
             <%= image_tag desk.image, class: "desk-img" %>
           </div>
