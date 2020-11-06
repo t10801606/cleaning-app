@@ -35,6 +35,16 @@ class DesksController < ApplicationController
     end
   end
 
+  def destroy
+    @desk = Desk.find(params[:id])
+    if current_user.id == @desk.user_id
+      @desk.destroy
+      redirect_to desks_path
+    else
+      render :show
+    end
+  end
+
   private
 
   def desk_params
