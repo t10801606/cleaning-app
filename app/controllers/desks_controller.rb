@@ -27,7 +27,8 @@ class DesksController < ApplicationController
   end
 
   def update
-    if desk_data.update(desk_params)
+    @desk = Desk.find(params[:id])
+    if @desk.update(desk_params)
       redirect_to desks_path
     else
       render :edit
