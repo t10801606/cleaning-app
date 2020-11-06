@@ -1,0 +1,25 @@
+＜投稿画像編集ページ＞
+<div class="desk-show">
+  <div class="desk-box">
+    <h2 class="title">
+      <%= @desk.title %>
+    </h2>
+    <h2 class="title">
+      <%= "投稿者: #{@desk.user.nickname}" %>
+    </h2>
+    <div class='desk-img-content'>
+      <%= image_tag @desk.image ,class:"desk-box-img" %>
+    </div>
+    <div class="desk-concept-box">
+      <span class="desk-price">
+        <%= "#{@desk.concept}"%>
+      </span>
+    </div>
+  
+      <%# ログインしていてかつ、ログインユーザーが投稿者の場合下記処理を実行する %>
+      <% if user_signed_in? && current_user.id == @desk.user_id %>
+        <%= link_to '編集', "#", method: :get, class: "desk-edit-btn" %>
+        <%= link_to '削除', "#", method: :delete, class:'desk-destroy-btn' %>
+      <% end %>
+  </div>
+</div>

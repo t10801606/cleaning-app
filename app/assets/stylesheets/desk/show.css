@@ -1,0 +1,89 @@
+.desk-show {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.desk-box {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 1200px;
+  padding: 10vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.desk-box>.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.desk-box-img {
+  height: 50vh;
+  width: 60vw;
+  min-height: 500px;
+  background-color: rgb(205, 202, 202);
+  object-fit: contain;
+}
+
+.desk-concept-box {
+  margin: 25px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.desk-concept-box>.desk-concept {
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+.btn-layout {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 編集ボタン */
+.desk-edit-btn {
+  text-align: center;
+  background-color: #f1f8fe;
+  font-size: 24px;
+  font-weight: bold;
+  color: #888;
+  border-radius: 4px;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  border: 1px solid #ccc;
+}
+
+/* 削除ボタン */
+.desk-destroy-btn {
+  background-color: #FADCE9;
+  text-align: center;
+  font-size: 24px;
+  color: #888;
+  border-radius: 4px;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  border: 1px solid #ccc;
+}
+
+.register-btn {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.register-blue-btn {
+  width: 100%;
+  background: #f1f8fe;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
