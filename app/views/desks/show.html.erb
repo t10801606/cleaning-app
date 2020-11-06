@@ -4,6 +4,9 @@
     <h2 class="title">
       <%= @desk.title %>
     </h2>
+    <h2 class="title">
+      <%= "投稿者: #{@desk.user.nickname}" %>
+    </h2>
     <div class='desk-img-content'>
       <%= image_tag @desk.image ,class:"desk-box-img" %>
     </div>
