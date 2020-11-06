@@ -43,3 +43,47 @@
   font-weight: bold;
 }
 
+.btn-layout {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 編集ボタン */
+.desk-edit-btn {
+  text-align: center;
+  background-color: #f1f8fe;
+  font-size: 24px;
+  font-weight: bold;
+  color: #888;
+  border-radius: 4px;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  border: 1px solid #ccc;
+}
+
+/* 削除ボタン */
+.desk-destroy-btn {
+  background-color: #FADCE9;
+  text-align: center;
+  font-size: 24px;
+  color: #888;
+  border-radius: 4px;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  border: 1px solid #ccc;
+}
+
+.register-btn {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.register-blue-btn {
+  width: 100%;
+  background: #f1f8fe;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
