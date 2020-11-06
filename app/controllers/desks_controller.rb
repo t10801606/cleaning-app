@@ -1,9 +1,9 @@
 class DesksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @desks = Desk.includes(:user).order("created_at DESC")
+    @desks = Desk.includes(:user).order('created_at DESC')
   end
-  
+
   def new
     @desk = Desk.new
   end
@@ -38,5 +38,4 @@ class DesksController < ApplicationController
   def desk_params
     params.require(:desk).permit(:title, :concept, :image).merge(user_id: current_user.id)
   end
-
 end
