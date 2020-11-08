@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to desk_path(@comment.desk)
     else
-      @prototype = @comment.desk
-      @comments = @desks.comments
+      @desk = @comment.desk
+      @comments = @desk.comments
       render "desks/show"
     end
   end

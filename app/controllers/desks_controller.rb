@@ -21,7 +21,7 @@ class DesksController < ApplicationController
   def show
     @desk = Desk.find(params[:id])
     @comment = Comment.new
-    @comments = @desk.comments.includes(:user)
+    @comments = @desk.comments
   end
 
   def edit

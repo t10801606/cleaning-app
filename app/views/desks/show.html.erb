@@ -1,4 +1,3 @@
-＜投稿画像編集ページ＞
 <div class="desk-show">
   <div class="desk-box">
     <h2 class="title">
@@ -21,5 +20,27 @@
         <%= link_to '編集', edit_desk_path(@desk.id), method: :get, class: "desk-edit-btn" %>
         <%= link_to '削除', "#", method: :delete, class:'desk-destroy-btn' %>
       <% end %>
+
+      <div class="desk__comments">
+        <% if user_signed_in? %>
+          <%= form_with model: [@desk, @comment], local: true do |f|%>
+            <div class="field">
+              <%= f.label :text, "コメント" %><br />
+              <%= f.text_field :text %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <% end %> 
+        <% end %>
+        <ul class="comments_lists">
+          <% @comments.each do |comment| %>
+            <li class="comments_list">
+              <%= comment.text%>
+              <%= "(#{comment.user.nickname})" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
   </div>
 </div>
