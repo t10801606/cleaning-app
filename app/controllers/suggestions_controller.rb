@@ -8,7 +8,8 @@ class SuggestionsController < ApplicationController
 
   def create
     @suggestion = Suggestion.new(suggestion_params)
-    status_judge
+    binding.pry
+    status_judge unless @suggestion.period_cleaning == nil && @suggestion.last_cleaned_date == nil
     if @suggestion.save
       redirect_to suggestions_path
     else
