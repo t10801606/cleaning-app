@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :desk do
-    title             { Faker::Name.name }
-    concept          { 'ワンルームのインテリアです。部屋にはあまり物を置かないようにしています。' }
+    title { Faker::Name.name }
+    concept { 'ワンルームのインテリアです。部屋にはあまり物を置かないようにしています。' }
     association :user
 
     after(:build) do |desk|
