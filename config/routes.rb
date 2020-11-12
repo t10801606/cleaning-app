@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :desks do
     resources :comments, only: :create
   end 
-  resources :suggestions, only: [:index, :new, :create]
+  resources :suggestions, only: [:index, :new, :create, :update]
 end
