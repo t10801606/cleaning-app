@@ -6,9 +6,10 @@ class CommentsController < ApplicationController
     else
       @desk = @comment.desk
       @comments = @desk.comments
-      render "desks/show"
+      render 'desks/show'
     end
   end
+
   private
 
   def comment_params

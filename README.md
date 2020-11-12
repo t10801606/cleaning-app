@@ -46,7 +46,7 @@
 | Column            | Type       | Options           |
 |-------------------|------------|-------------------|
 | place             | string     | null: false       |
-| status            | integer    | null: false       |
+| status            | boolean    | null: false       |
 | period_cleaning   | integer    | null: false       |
 | last_cleaned_date | date       | null: false       |
 | user              | references | foreign_key: true |

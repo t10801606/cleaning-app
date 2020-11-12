@@ -1,0 +1,47 @@
+<%= form_with model: @suggestion, class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      掃除箇所の新規登録
+    </h1>
+  </div>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <%# フォーム(清掃場所) %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">掃除場所</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :place, class:"input-default", id:"place", placeholder:"例) ディスプレイ", maxlength:"40" %>
+  </div>
+
+  <%# フォーム(清掃期間) %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">清掃期間(○日間に1回掃除する)</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class ="input-expiration-date-wrap">
+      <%= f.text_field :period_cleaning, class:"input-default", id:"period_cleaning" %>
+      <p>日</p>
+    </div>
+  </div>
+
+  <%# フォーム(最後に掃除した日) %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">最後に清掃したのは？</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.date_field :last_cleaned_date, class:"input-default", id:"last_cleaned_date"%>
+  </div>
+  
+  <div class="form-group">
+    <div class="actions">
+      <%= f.submit "新規登録", class: "register-blue-btn" %>
+    </div>
+  </div>
+</div>
+<% end %>

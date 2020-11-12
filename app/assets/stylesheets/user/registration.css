@@ -1,3 +1,4 @@
+/* ---------ユーザー登録以外のフォームにも適用----------- */
 .registration-main {
   width: 100%;
   min-width: 800px;
@@ -66,6 +67,17 @@
   font-size: 15px;
   margin-top: 3px;
 }
+
+/* 掃除箇所の日付フォーム */
+.input-expiration-date-wrap {
+  display: flex;
+  align-items: center;
+}
+
+#last_cleaned_date,#period_cleaning{
+  width: 50%;
+}
+
 
 /* ボタンの設定 */
 .register-btn {
