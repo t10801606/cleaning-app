@@ -1,1 +1,20 @@
 <%=link_to "掃除箇所の登録", new_suggestion_path%>
+<div class='suggestion-contents' >
+    <ul class='suggestion-lists'>
+      <% @suggestions.each do |suggestion| %>
+        <% if user_signed_in? && current_user.id == suggestion.user_id && suggestion.status == false %>
+          <li class='list'>
+            <%= suggestion.place %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+</div>
+
+  <div class='form-wrap'>
+    <div class="form-group">
+      <div class="actions">
+        <%= button_to "今日の掃除箇所を決める", root_path, method: :get, class: "register-blue-btn" %>
+      </div>
+    </div>
+  </div>
