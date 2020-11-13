@@ -29,7 +29,16 @@ class SuggestionsController < ApplicationController
   end
 
   def update
+    suggestion = Suggestion.find(params[:id])
+    suggestion.last_cleaned_date = Date.today
+    suggestion.save
+    if suggestion.save
+      redirect_to suggestions_path
+    else
+      render :index
+    end
   end
+
   private
   def suggestion_params
     params.require(:suggestion).permit(:place, :period_cleaning, :last_cleaned_date, :status).merge(user_id: current_user.id)
