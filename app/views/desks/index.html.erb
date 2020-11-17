@@ -1,3 +1,4 @@
+<%= render "shared/desk_header" %>
 <%= link_to "画像を投稿する", new_desk_path%>
 
 <%# 画像一覧 %>
@@ -8,7 +9,7 @@
       <li class='list'>
         <%= link_to desk_path(desk.id) do %>
           <div class='desk-img-content'>
-            <%= image_tag desk.image, class: "desk-img" %>
+            <%= image_tag desk.image, size: '100x100', class: "desk-img" %>
           </div>
           <div class='desk-info'>
             <h3 class='desk-tiutle'>
@@ -21,3 +22,13 @@
   </ul>
 </div>
 <%# /画像一覧 %>
+
+<%# 画像投稿アイコン %>
+<%=link_to new_desk_path do %>
+  <div class='desk-btn'>
+    <span class='desk-btn-text'>投稿する</span>
+    <span class='desk-btn-text'>
+      <%= image_tag 'desk.png' , size: '50x50' ,class: "desk-btn-icon" %>
+    </span>
+  </div>
+<% end %>

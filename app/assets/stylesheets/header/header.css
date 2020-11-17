@@ -3,6 +3,7 @@
 .header {
   padding: 20px 0;
   background-color:AntiqueWhite;
+  position: fixed;
 }
 
 .inner {
@@ -20,10 +21,14 @@
   margin-left: 3vw;
 }
 
+.logo:hover {
+  color: Chocolate;
+}
+
 .nav__btn {
   margin-right: 3vw;
 }
 
 .nav__btn:hover {
-  color: DeepSkyBlue;
+  color: Chocolate;
 }

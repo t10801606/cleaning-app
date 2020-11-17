@@ -53,3 +53,27 @@
   .desk-name {
   font-size: 2.5vh;
 }
+
+/* 画像投稿アイコン */
+.desk-btn {
+  width: 120px;
+  background: #f1f8fe;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.desk-btn-text {
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.desk-btn-icon {
+  width: 60%;
+}
