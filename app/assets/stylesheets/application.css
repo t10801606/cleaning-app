@@ -89,32 +89,3 @@ header {
 .field {
   margin: 10px 0;
 }
-/* ----------トップページ---------- */
-
-.wrapper {
-  display: flex;
-  margin: 0 auto;
-}
-
-/* ----------投稿画像のトップページリンク---------- */
-
-.left-side {
-  width: 50vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-/* ----------掃除提案のトップページリンク---------- */
-.right-side {
-  width: 50vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}

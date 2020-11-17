@@ -1,4 +1,26 @@
 /* --------------トップページのCSS-------------- */
+.wrapper {
+  display: flex;
+  margin: 0 auto;
+}
+
+.left-side {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-side {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .side-main {
   width: 100%;
