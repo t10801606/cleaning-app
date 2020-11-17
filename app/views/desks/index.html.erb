@@ -2,26 +2,26 @@
 <%= link_to "画像を投稿する", new_desk_path%>
 
 <%# 画像一覧 %>
-<div class='desk-contents'>
-  <ul class='desk-lists'>
 
-    <% @desks.each do |desk| %>
-      <li class='list'>
-        <%= link_to desk_path(desk.id) do %>
-          <div class='desk-img-content'>
-            <%= image_tag desk.image, size: '100x100', class: "desk-img" %>
-          </div>
-          <div class='desk-info'>
-            <h3 class='desk-tiutle'>
-            <%= desk.title %>
-            <%= desk.user.nickname %>
-          </h3>
-          </div>
-        <% end %>
-      </li>
+<div class = "wrapper grid">
+  <% @desks.each do |desk| %>
+    <%= link_to desk_path(desk.id) do %>
+      <div class = "desk-item">
+        <%= image_tag desk.image, class: "desk-img" %>
+        <p>
+          <%= desk.title %>
+          <%= "by#{desk.user.nickname}さん" %>
+        </p>
+      </div>
     <% end %>
-  </ul>
+
+  <% end %>
 </div>
+
+
+
+
+
 <%# /画像一覧 %>
 
 <%# 画像投稿アイコン %>
