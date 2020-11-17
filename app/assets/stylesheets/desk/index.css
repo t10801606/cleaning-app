@@ -1,55 +1,50 @@
-/* 画像一覧 */
-
-.desk-contents {
-  background-color: #FFF;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10vh 0;
+/*------------ 画像一覧のグリッド設定 -------------*/
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  /* スマホ向けの余白設定 */
+  padding: 0 4%;
 }
 
-  .desk-contents>.title {
-  font-size: 5vh;
-  line-height: 1.4;
-  font-weight: bold;
+.grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 6%;
+  margin-bottom: 50px;
 }
-  
-  .desk-contents>.subtitle {
-  font-size: 3vh;
-  margin: 1vh 0;
+
+ .desk-img {
+   height: 33vh;
+   width: 50vh;
+   object-fit: cover;
+ }
+
+
+/* 画像投稿アイコン */
+.desk-btn {
+  width: 120px;
+  background: #f1f8fe;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.desk-btn:hover {
+  opacity: 0.6;
+}
+
+.desk-btn-text {
+  display: block;
+  font-size: 18px;
   text-decoration: none;
-  color: #3ccace;
-  font-weight: bold;
+  margin-bottom: 5px;
 }
-  
-  .desk-lists {
-  width: 100vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-  
-  .desk-lists>.list {
-  width: 54vh;
-  padding: 1vw;
-  background-color: #FFF;
-}
-  
-  .desk-img-content {
-  position: relative;
-}
-  
-  .desk-img {
-  width: 50vh;
-  height: 50vh;
-}
-  
-  .desk-info {
-  background-color: #FFF;
-  color: black;
-  padding: 1vw;
-}
-  
-  .desk-name {
-  font-size: 2.5vh;
+
+.desk-btn-icon {
+  width: 60%;
 }
