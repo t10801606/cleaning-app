@@ -2,7 +2,7 @@
   <div class ="inner">
     <div class ="nav">
       <div class ="nav-left">
-        <%= link_to "トップページ", root_path, class: :logo %>
+        <%= link_to "投稿一覧", desks_path, class: :logo %>
         <% if user_signed_in? %>
           <%= link_to "掃除提案", suggestions_path, class: :logo %>
         <% end %>
@@ -14,7 +14,6 @@
         </div>
       <% else %>
         <div class ="nav-right">
-          <%= link_to "画像投稿", new_desk_path, class: :nav__btn %>        
           <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
           <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
         </div>
