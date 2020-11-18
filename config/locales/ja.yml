@@ -1,6 +1,8 @@
 ja:
  activerecord:
    attributes:
+     user:
+       nickname: ニックネーム
      desk:
        title: 画像タイトル
        image: 投稿画像
