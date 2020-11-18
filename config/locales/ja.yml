@@ -1,0 +1,12 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+     desk:
+       title: 画像タイトル
+       image: 投稿画像
+     suggestion:
+       place: 掃除場所
+       period_cleaning: 清掃期間
+       last_cleaned_date: 最後に清掃した日

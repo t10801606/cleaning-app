@@ -8,7 +8,7 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
     # 半角アルファベット（大文字・小文字・数値）
-    validates :password, format: { with: PASSWORD_REGEX, message: 'Include both letters and numbers' }, length: { minimum: 6 }
+    validates :password, format: { with: PASSWORD_REGEX, message: 'はアルファベットと数字を含めてください' }, length: { minimum: 6 }
   end
   has_many :desks
   has_many :comments
