@@ -2,10 +2,7 @@
   <div class ="inner">
     <div class ="nav">
       <div class ="nav-left">
-        <%= link_to "トップページ", root_path, class: :logo %>
-        <% if user_signed_in? %>
-          <%= link_to "掃除提案", suggestions_path, class: :logo %>
-        <% end %>
+        <%= link_to "掃除提案に戻る", suggestions_path, class: :logo %>
       </div>
        <% if user_signed_in? %>
         <div class ="nav-right">

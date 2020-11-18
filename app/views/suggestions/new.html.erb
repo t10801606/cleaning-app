@@ -1,3 +1,4 @@
+<%=render "shared/second_suggestion_header"%>
 <%= form_with model: @suggestion, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
@@ -40,7 +41,7 @@
   
   <div class="form-group">
     <div class="actions">
-      <%= f.submit "新規登録", class: "register-blue-btn" %>
+      <%= f.submit "登録する", class: "register-red-btn" %>
     </div>
   </div>
 </div>
