@@ -39,6 +39,30 @@
   display: flex;
 }
 
+/* テーブル */
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.tabel-heading {
+  background-color: #d4f0fd;
+}
+
+table tr{
+  border-bottom: solid 1px #eee;
+
+}
+
+
+table th,table td{
+  text-align: center;
+  width: 25%;
+  padding: 15px 0;
+}
+
 
 /* 画像投稿アイコン */
 .suggestion-btn {

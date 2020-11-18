@@ -4,7 +4,7 @@
       <div class ="nav-left">
         <%= link_to "トップページ", root_path, class: :logo %>
         <% if user_signed_in? %>
-          <%= link_to "画像一覧", suggestions_path, class: :logo %>
+          <%= link_to "投稿一覧", desks_path, class: :logo %>
         <% end %>
       </div>
        <% if user_signed_in? %>

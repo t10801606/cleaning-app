@@ -104,3 +104,13 @@
   font-size: 14px;
   cursor: pointer;
 }
+
+.suggestion-blue-btn {
+  width: 50%;
+  background: #f1f8fe;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
