@@ -26,3 +26,13 @@
       </div>
     </div>
   </div>
+
+  <%# 画像投稿アイコン %>
+<%=link_to new_suggestion_path do %>
+  <div class='suggestion-btn'>
+    <span class='desk-btn-text'>登録する</span>
+    <span class='desk-btn-text'>
+      <%= image_tag 'suggestion.png' , size: '50x50' ,class: "desk-btn-icon" %>
+    </span>
+  </div>
+<% end %>
