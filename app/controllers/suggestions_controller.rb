@@ -17,7 +17,7 @@ class SuggestionsController < ApplicationController
 
   def create
     @suggestion = Suggestion.new(suggestion_params)
-    status_judge unless @suggestion.period_cleaning.nil? && @suggestion.last_cleaned_date.nil?
+    status_judge unless @suggestion.period_cleaning.nil? || @suggestion.last_cleaned_date.nil?
     if @suggestion.save
       redirect_to suggestions_path
     else
@@ -47,4 +47,5 @@ class SuggestionsController < ApplicationController
     num_days = (this_day - @suggestion.last_cleaned_date).to_i
     @suggestion.status = !(@suggestion.period_cleaning <= num_days)
   end
+
 end
