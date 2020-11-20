@@ -25,11 +25,24 @@ class SuggestionsController < ApplicationController
     end
   end
 
-  def update
+  def finish
     suggestion = Suggestion.find(params[:id])
     suggestion.last_cleaned_date = Date.today
     suggestion.save
     if suggestion.save
+      redirect_to suggestions_path
+    else
+      render :index
+    end
+  end
+
+  def edit
+    @suggestion = Suggestion.find(params[:id])
+  end
+
+  def update
+    suggestion = Suggestion.find(params[:id])
+    if suggestion.update(suggestion_params)
       redirect_to suggestions_path
     else
       render :index
