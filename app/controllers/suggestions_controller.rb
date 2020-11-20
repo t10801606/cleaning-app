@@ -76,5 +76,4 @@ class SuggestionsController < ApplicationController
     num_days = (this_day - @suggestion.last_cleaned_date).to_i
     @suggestion.status = !(@suggestion.period_cleaning <= num_days)
   end
-
 end

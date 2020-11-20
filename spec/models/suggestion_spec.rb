@@ -24,38 +24,38 @@ RSpec.describe Suggestion, type: :model do
     it 'statusが空だと登録できないこと' do
       @suggestion.status = nil
       @suggestion.valid?
-      expect(@suggestion.errors.full_messages).to include("Status is not included in the list")
+      expect(@suggestion.errors.full_messages).to include('Status is not included in the list')
     end
 
     it 'period_cleaningが空だと登録できないこと' do
       @suggestion.period_cleaning = nil
       @suggestion.valid?
-      expect(@suggestion.errors.full_messages).to include("Period cleaning can't be blank", "Period cleaning is invalid")
+      expect(@suggestion.errors.full_messages).to include("Period cleaning can't be blank", 'Period cleaning is invalid')
     end
 
     it 'period_cleaningが数字以外だと登録できないこと' do
       @suggestion.period_cleaning = 'あああ'
       @suggestion.valid?
-      expect(@suggestion.errors.full_messages).to include("Period cleaning is not a number")
+      expect(@suggestion.errors.full_messages).to include('Period cleaning is not a number')
     end
 
     it 'period_cleaningが0だと登録できないこと' do
       @suggestion.period_cleaning = 0
       @suggestion.valid?
-      expect(@suggestion.errors.full_messages).to include("Period cleaning must be greater than or equal to 1")
+      expect(@suggestion.errors.full_messages).to include('Period cleaning must be greater than or equal to 1')
     end
 
     it 'period_cleaningがマイナスの整数だと登録できないこと' do
       @suggestion.period_cleaning = -1
       @suggestion.valid?
-      expect(@suggestion.errors.full_messages).to include("Period cleaning must be greater than or equal to 1",
-      "Period cleaning is invalid")
+      expect(@suggestion.errors.full_messages).to include('Period cleaning must be greater than or equal to 1',
+                                                          'Period cleaning is invalid')
     end
 
     it 'period_cleaningが小数点を含むと登録できないこと' do
       @suggestion.period_cleaning = 1.5
       @suggestion.valid?
-      expect(@suggestion.errors.full_messages).to include("Period cleaning must be an integer")
+      expect(@suggestion.errors.full_messages).to include('Period cleaning must be an integer')
     end
 
     it 'last_cleaned_dateが空だと登録できないこと' do
@@ -65,9 +65,9 @@ RSpec.describe Suggestion, type: :model do
     end
 
     it 'last_cleaned_dateが明日以降だと登録できないこと' do
-      @suggestion.last_cleaned_date = Date.today+1
+      @suggestion.last_cleaned_date = Date.today + 1
       @suggestion.valid?
-      expect(@suggestion.errors.full_messages).to include("Last cleaned date は、今日を含む過去の日付を入力して下さい")
+      expect(@suggestion.errors.full_messages).to include('Last cleaned date は、今日を含む過去の日付を入力して下さい')
     end
 
     it 'ユーザーが紐づいてないと登録できないこと' do
