@@ -1,5 +1,5 @@
 class SuggestionsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new]
+  before_action :authenticate_user!, except: :index
   def index
     @suggestions = Suggestion.includes(:user)
     # indexアクションが実行されるたびに、掃除箇所の判定(statusカラムの更新)を行う
