@@ -4,5 +4,12 @@ Rails.application.routes.draw do
   resources :desks do
     resources :comments, only: :create
   end 
-  resources :suggestions, only: [:index, :new, :create, :update]
+  resources :suggestions, only: [:index, :new, :create, :edit, :update, :destroy] do
+    member do
+      patch 'finish'
+    end
+    collection do
+      get 'clean'
+    end
+  end
 end

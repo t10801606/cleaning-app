@@ -2,7 +2,7 @@
 <div class = "index-main">
   <div class = "index-header">
     <h1 class='index-header-text'>
-          掃除提案ページ
+          登録一覧
     </h1>
   </div>
 
@@ -10,14 +10,20 @@
   <div class='suggestion-contents' >
     <table>
       <tr class="tabel-heading">
-        <th>今日の掃除箇所</th>
-        <th>掃除出来たらボタンをpush!</th>
+        <th>掃除箇所</th>
+        <th>清掃期間(日)</th>
+        <th>最後に清掃した日</th>
+        <th>編集ボタン</th>
+        <th>編集ボタン</th>
       </tr>
       <% @suggestions.each do |suggestion| %>
-        <% if user_signed_in? && current_user.id == suggestion.user_id && suggestion.status == false %>
+        <% if user_signed_in? && current_user.id == suggestion.user_id %>
           <tr>
             <td><%= suggestion.place %></td>
-            <td><%= button_to "掃除完了", suggestion_path(suggestion.id), method: :patch, class: "suggestion-blue-btn" %></td>
+            <td><%= suggestion.period_cleaning %></td>
+            <td><%= suggestion.last_cleaned_date %></td>
+            <td><%= button_to "編集", edit_suggestion_path(suggestion.id), method: :get, class: "suggestion-blue-btn" %></td>
+            <td><%= button_to "削除", suggestion_path(suggestion.id), method: :delete, class: "suggestion-red-btn" %></td>
           </tr>
         <% end %>
       <% end %>
@@ -34,23 +40,21 @@
       </div>
     <% end %>
 
-    <%=link_to new_suggestion_path do %>
-    <div class='suggestion-edit-btn'>
-      <span class='suggestion-btn-text'>編集する</span>
-      <span class='suggestion-btn-text'>
-        <%= image_tag 'edit.png' , size: '50x50' ,class: "desk-btn-icon" %>
-      </span>
-    </div>
-  <% end %>
+    <%=link_to clean_suggestions_path do %>
+      <div class='suggestion-index-btn'>
+        <span class='suggestion-btn-text'>掃除提案</span>
+        <span class='suggestion-btn-text'>
+          <%= image_tag 'calender.png' , size: '50x50' ,class: "desk-btn-icon" %>
+        </span>
+      </div>
+    <% end %>
 
-  <%=link_to new_desk_path do %>
-    <div class='desk-btn'>
-      <span class='desk-btn-text'>画像投稿</span>
-      <span class='desk-btn-text'>
-        <%= image_tag 'desk.png' , size: '50x50' ,class: "desk-btn-icon" %>
-      </span>
-    </div>
-  <% end %>
-
-  
+    <%=link_to new_desk_path do %>
+      <div class='desk-btn'>
+        <span class='desk-btn-text'>画像投稿</span>
+        <span class='desk-btn-text'>
+          <%= image_tag 'desk.png' , size: '50x50' ,class: "desk-btn-icon" %>
+        </span>
+      </div>
+    <% end %>
 </div>
