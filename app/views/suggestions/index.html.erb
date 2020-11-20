@@ -1,32 +1,56 @@
 <%=render "shared/suggestion_header"%>
-<h1 class='form-header-text'>
-      掃除箇所の新規登録
-</h1>
-<div class='suggestion-contents' >
-  <table>
-    <tr class="tabel-heading">
-      <th>今日の掃除箇所</th>
-      <th>掃除出来たらボタンをpush!</th>
-    </tr>
-    <% @suggestions.each do |suggestion| %>
-      <% if user_signed_in? && current_user.id == suggestion.user_id && suggestion.status == false %>
-        <tr>
-          <td><%= suggestion.place %></td>
-          <td><%= button_to "掃除完了", suggestion_path(suggestion.id), method: :patch, class: "suggestion-blue-btn" %></td>
-        </tr>
+<div class = "index-main">
+  <div class = "index-header">
+    <h1 class='index-header-text'>
+          掃除提案ページ
+    </h1>
+  </div>
+
+  <%# 掃除提案のテーブル %>
+  <div class='suggestion-contents' >
+    <table>
+      <tr class="tabel-heading">
+        <th>今日の掃除箇所</th>
+        <th>掃除出来たらボタンをpush!</th>
+      </tr>
+      <% @suggestions.each do |suggestion| %>
+        <% if user_signed_in? && current_user.id == suggestion.user_id && suggestion.status == false %>
+          <tr>
+            <td><%= suggestion.place %></td>
+            <td><%= button_to "掃除完了", suggestion_path(suggestion.id), method: :patch, class: "suggestion-blue-btn" %></td>
+          </tr>
+        <% end %>
       <% end %>
+    </table>
+  </div>
+
+    <%# 右側のアイコン %>
+    <%=link_to new_suggestion_path do %>
+      <div class='suggestion-btn'>
+        <span class='suggestion-btn-text'>登録する</span>
+        <span class='suggestion-btn-text'>
+          <%= image_tag 'suggestion.png' , size: '50x50' ,class: "desk-btn-icon" %>
+        </span>
+      </div>
     <% end %>
-</table>
-</div>
+
+    <%=link_to new_suggestion_path do %>
+    <div class='suggestion-edit-btn'>
+      <span class='suggestion-btn-text'>編集する</span>
+      <span class='suggestion-btn-text'>
+        <%= image_tag 'edit.png' , size: '50x50' ,class: "desk-btn-icon" %>
+      </span>
+    </div>
+  <% end %>
+
+  <%=link_to new_desk_path do %>
+    <div class='desk-btn'>
+      <span class='desk-btn-text'>画像投稿</span>
+      <span class='desk-btn-text'>
+        <%= image_tag 'desk.png' , size: '50x50' ,class: "desk-btn-icon" %>
+      </span>
+    </div>
+  <% end %>
 
   
-
-  <%# 画像投稿アイコン %>
-<%=link_to new_suggestion_path do %>
-  <div class='suggestion-btn'>
-    <span class='desk-btn-text'>登録する</span>
-    <span class='desk-btn-text'>
-      <%= image_tag 'suggestion.png' , size: '50x50' ,class: "desk-btn-icon" %>
-    </span>
-  </div>
-<% end %>
+</div>
