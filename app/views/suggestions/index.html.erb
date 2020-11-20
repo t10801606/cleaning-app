@@ -38,6 +38,7 @@
         <th>清掃期間(日)</th>
         <th>最後に清掃した日</th>
         <th>編集ボタン</th>
+        <th>編集ボタン</th>
       </tr>
       <% @suggestions.each do |suggestion| %>
         <% if user_signed_in? && current_user.id == suggestion.user_id %>
@@ -46,6 +47,7 @@
             <td><%= suggestion.period_cleaning %></td>
             <td><%= suggestion.last_cleaned_date %></td>
             <td><%= button_to "編集", edit_suggestion_path(suggestion.id), method: :get, class: "suggestion-blue-btn" %></td>
+            <td><%= button_to "削除", suggestion_path(suggestion.id), method: :delete, class: "suggestion-red-btn" %></td>
           </tr>
         <% end %>
       <% end %>

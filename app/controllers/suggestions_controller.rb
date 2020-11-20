@@ -49,6 +49,16 @@ class SuggestionsController < ApplicationController
     end
   end
 
+  def destroy
+    suggestion = Suggestion.find(params[:id])
+    if current_user.id == suggestion.user_id
+      suggestion.destroy
+      redirect_to suggestions_path
+    else
+      render :index
+    end
+  end
+
   private
 
   def suggestion_params

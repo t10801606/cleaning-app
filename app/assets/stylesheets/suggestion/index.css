@@ -35,9 +35,6 @@
   padding: 5vh 0;
   
 }
-
-  
-
   .suggestion-contents>.title {
   font-size: 5vh;
   line-height: 1.4;
@@ -79,6 +76,16 @@
   cursor: pointer;
 }
 
+.suggestion-red-btn {
+  width: 50%;
+  background: #ffe4e1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
 /* テーブル */
 table{
   border-collapse: collapse;
@@ -98,7 +105,7 @@ table tr{
 
 table th,table td{
   text-align: center;
-  width: 25%;
+  width: 20%;
   padding: 15px 0;
 }
 
