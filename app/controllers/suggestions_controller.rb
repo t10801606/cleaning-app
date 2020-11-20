@@ -1,14 +1,19 @@
 class SuggestionsController < ApplicationController
-  before_action :authenticate_user!, except: :index
-  def index
+  before_action :authenticate_user!, except: :clean
+
+  def clean
     @suggestions = Suggestion.includes(:user)
-    # indexアクションが実行されるたびに、掃除箇所の判定(statusカラムの更新)を行う
+    # cleanアクションが実行されるたびに、掃除箇所の判定(statusカラムの更新)を行う
     @suggestions.each do |suggestion|
       this_day = Date.today
       num_days = (this_day - suggestion.last_cleaned_date).to_i
       suggestion.status = !(suggestion.period_cleaning <= num_days)
       suggestion.save
     end
+  end
+
+  def index
+    @suggestions = Suggestion.includes(:user)
   end
 
   def new
@@ -19,7 +24,7 @@ class SuggestionsController < ApplicationController
     @suggestion = Suggestion.new(suggestion_params)
     status_judge unless @suggestion.period_cleaning.nil? || @suggestion.last_cleaned_date.nil?
     if @suggestion.save
-      redirect_to suggestions_path
+      redirect_to clean_suggestions_path
     else
       render :new
     end
@@ -30,9 +35,9 @@ class SuggestionsController < ApplicationController
     suggestion.last_cleaned_date = Date.today
     suggestion.save
     if suggestion.save
-      redirect_to suggestions_path
+      redirect_to clean_suggestions_path
     else
-      render :index
+      render :clean
     end
   end
 
@@ -41,11 +46,12 @@ class SuggestionsController < ApplicationController
   end
 
   def update
-    suggestion = Suggestion.find(params[:id])
-    if suggestion.update(suggestion_params)
+    @suggestion = Suggestion.find(params[:id])
+    status_judge unless @suggestion.period_cleaning.nil? || @suggestion.last_cleaned_date.nil?
+    if @suggestion.update(suggestion_params)
       redirect_to suggestions_path
     else
-      render :index
+      render :edit
     end
   end
 

@@ -8,5 +8,8 @@ Rails.application.routes.draw do
     member do
       patch 'finish'
     end
+    collection do
+      get 'clean'
+    end
   end
 end

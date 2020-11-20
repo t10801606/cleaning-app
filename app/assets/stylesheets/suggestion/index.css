@@ -115,6 +115,18 @@ table th,table td{
   background: #ffe4e1;
   text-align: center;
   border-radius: 4%;
+  bottom: 328px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+.suggestion-index-btn {
+  width: 120px;
+  background: #ffe4e1;
+  text-align: center;
+  border-radius: 4%;
   bottom: 180px;
   right: 32px;
   position: fixed;
@@ -127,6 +139,10 @@ table th,table td{
 }
 
 .suggestion-edit-btn:hover {
+  opacity: 0.6;
+}
+
+.suggestion-index-btn:hover {
   opacity: 0.6;
 }
 
