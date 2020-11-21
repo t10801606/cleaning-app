@@ -25,6 +25,13 @@
   width: 60%;
 }
 
+.index-header-text p {
+  font-size: 14px;
+  color: grey;
+  position: relative;
+  top: -30px;  
+}
+
 /* 提案部分 */
 
 .suggestion-contents {
@@ -95,7 +102,7 @@ table{
 }
 
 .tabel-heading {
-  background-color: #d4f0fd;
+  background-color: #ffe4e1;
 }
 
 table tr{
