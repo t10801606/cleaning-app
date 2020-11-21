@@ -16,7 +16,16 @@
 
 <%# /画像一覧 %>
 
-<%# 画像投稿アイコン %>
+<%# アイコン %>
+<%=link_to clean_suggestions_path do %>
+  <div class='suggestion-index-btn'>
+    <span class='suggestion-btn-text'>掃除提案</span>
+    <span class='suggestion-btn-text'>
+      <%= image_tag 'calender.png' , size: '50x50' ,class: "desk-btn-icon" %>
+    </span>
+  </div>
+<% end %>
+
 <%=link_to new_desk_path do %>
   <div class='desk-btn'>
     <span class='desk-btn-text'>投稿する</span>
