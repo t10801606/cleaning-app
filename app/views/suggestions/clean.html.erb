@@ -2,7 +2,8 @@
 <div class = "index-main">
   <div class = "index-header">
     <h1 class='index-header-text'>
-          今日は下記を掃除しましょう
+          今日は下記を掃除しましょう<br>
+          <p>※予め「登録する」ボタンで掃除場所を登録する必要があります</p>
     </h1>
   </div>
 
@@ -11,12 +12,14 @@
     <table>
       <tr class="tabel-heading">
         <th>今日の掃除箇所</th>
+        <th>前回の清掃日</th>
         <th>掃除出来たらボタンをpush!</th>
       </tr>
       <% @suggestions.each do |suggestion| %>
         <% if user_signed_in? && current_user.id == suggestion.user_id && suggestion.status == false %>
           <tr>
             <td><%= suggestion.place %></td>
+            <td><%= suggestion.last_cleaned_date %></td>
             <td><%= button_to "掃除完了", finish_suggestion_path(suggestion.id), method: :patch, class: "suggestion-blue-btn" %></td>
           </tr>
         <% end %>
