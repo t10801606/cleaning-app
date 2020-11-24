@@ -14,7 +14,7 @@
         <th>清掃期間(日)</th>
         <th>最後に清掃した日</th>
         <th>編集ボタン</th>
-        <th>編集ボタン</th>
+        <th>削除ボタン</th>
       </tr>
       <% @suggestions.each do |suggestion| %>
         <% if user_signed_in? && current_user.id == suggestion.user_id %>
