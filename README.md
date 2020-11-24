@@ -67,7 +67,7 @@
 **掃除登録及び提案機能**<br>
 登録した掃除場所情報を元に、最後の清掃した日からの経過日数をアプリ内で計算します。<br>
 その経過日数が登録した清掃期間を超えたものを今日の掃除箇所として提案します。<br>
-<img width="1000" src="https://user-images.githubusercontent.com/72062153/99951439-77fdec80-2dc1-11eb-8ad8-3e0f3caeb5c6.png">
+<img width="1000" src="https://user-images.githubusercontent.com/72062153/100056565-36288100-2e69-11eb-909e-f5bf149bc80b.png">
 提案された掃除箇所の「掃除完了」ボタンをクリックすると、該当箇所が非表示になります。<br>
 その後一定日数が経過し、再び清掃期間を超えると再度提案されます。<br>
 ![7df36e989a99008cfb05e428b7614ebb](https://user-images.githubusercontent.com/72062153/100018009-1a988880-2e1f-11eb-9218-deacab494357.gif)
