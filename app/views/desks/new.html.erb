@@ -13,7 +13,7 @@
         <label class="form-text">画像タイトル</label>
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_field :title, class:"input-default", placeholder: "タイトル" %>
+      <%= f.text_field :title, class:"input-default", placeholder: "タイトル", id:"desk-title" %>
     </div>
     <%# /フォーム(画像タイトル) %>
     <%# 投稿画像 %>
@@ -26,7 +26,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"desk-image" %>
+        <%= f.file_field :image, id:"desk-image", name:"desk[image]" %>
       </div>
       <div id="image-list"></div>
     </div>
@@ -37,7 +37,7 @@
         <label class="form-text">コンセプト</label>
         <span class="indispensable">必須ではありません</span>
       </div>
-      <%= f.text_area :concept, class:"input-default", placeholder: "自慢しましょう" %>
+      <%= f.text_area :concept, class:"input-default", placeholder: "自慢しましょう", id:"desk-concept" %>
     </div>
     <%# /フォーム(コンセプト) %>
     <%# 投稿ボタン %>
