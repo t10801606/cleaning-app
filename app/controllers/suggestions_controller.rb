@@ -1,6 +1,6 @@
 class SuggestionsController < ApplicationController
   before_action :authenticate_user!, except: :clean
-
+  before_action :move_to_index, only: [:edit]
   def clean
     @suggestions = Suggestion.includes(:user)
     # cleanアクションが実行されるたびに、掃除箇所の判定(statusカラムの更新)を行う
@@ -75,5 +75,10 @@ class SuggestionsController < ApplicationController
     this_day = Date.today
     num_days = (this_day - @suggestion.last_cleaned_date).to_i
     @suggestion.status = !(@suggestion.period_cleaning <= num_days)
+  end
+
+  def move_to_index
+    @suggestion = Suggestion.find(params[:id])
+    redirect_to action: :index unless current_user.id == @suggestion.user_id
   end
 end
