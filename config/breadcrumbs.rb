@@ -14,17 +14,7 @@ end
 
 crumb :new_suggestion do
   link "掃除箇所の登録", new_suggestion_path
-  parent :clean_suggestions
-end
-
-crumb :desks do
-  link "画像一覧", desks_path
-  parent :root
-end
-
-crumb :new_desk do
-  link "新規投稿画面", new_desk_path
-  parent :desks
+  parent :suggestions
 end
 
 # crumb :projects do

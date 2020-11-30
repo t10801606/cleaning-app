@@ -2,7 +2,8 @@
   <div class ="inner">
     <div class ="nav">
       <div class ="nav-left">
-        <%= link_to "トップページ", root_path, class: :logo %>
+        <% breadcrumb :clean_suggestions  %>
+        <%= breadcrumbs separator: " > " , class: :logo %>
       </div>
        <% if user_signed_in? %>
         <div class ="nav-right">

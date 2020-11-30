@@ -2,7 +2,8 @@
   <div class ="inner">
     <div class ="nav">
       <div class ="nav-left">
-        <%= link_to "掃除提案に戻る", clean_suggestions_path, class: :logo %>
+        <% breadcrumb :new_suggestion  %>
+        <%= breadcrumbs separator: " > " , class: :logo %>
       </div>
        <% if user_signed_in? %>
         <div class ="nav-right">

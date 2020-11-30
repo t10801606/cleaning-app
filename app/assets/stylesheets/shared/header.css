@@ -22,7 +22,16 @@
   margin-left: 3vw;
 }
 
-.logo:hover {
+.logo a {
+  margin-right: 0.5vw;
+}
+
+.current {
+  font-weight: bold;
+  margin-right: 1vw;
+}
+
+.logo:hover,.logo a:hover {
   color: Chocolate;
 }
 
