@@ -3,6 +3,7 @@
     <div class ="nav">
       <div class ="nav-left">
         <%= link_to "トップページ", root_path, class: :logo %>
+        <% breadcrumb :root %>
       </div>
        <% if user_signed_in? %>
         <div class ="nav-right">
