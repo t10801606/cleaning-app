@@ -1,0 +1,33 @@
+<%= form_with model: current_user, class: 'registration-main', local: true do |f| %>
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      ユーザー情報編集
+    </h1>
+  </div>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ニックネーム</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) クーすけ", maxlength:"40" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">メールアドレス</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+  </div>
+ 
+  <div class="form-group">
+
+        <div class="actions">
+          <%= f.submit "更新する", class: "register-blue-btn" %>
+        </div>
+  </div>
+</div>
+<% end %>
