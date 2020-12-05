@@ -12,4 +12,5 @@ Rails.application.routes.draw do
       get 'clean'
     end
   end
+  resources :users, only: [:edit, :update]
 end
