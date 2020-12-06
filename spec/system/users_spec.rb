@@ -51,3 +51,63 @@ RSpec.describe 'ユーザー新規登録', type: :system do
     end
   end
 end
+
+RSpec.describe 'ユーザー情報の編集', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+  context 'ユーザー情報が編集できるとき' do
+    it '正しい情報を入力すればユーザー情報が編集できてトップページに移動する' do
+      # トップページに移動する
+      visit root_path
+
+      # ログインする
+      sign_in(@user)
+      # ユーザー情報編集ページに遷移する
+      visit edit_user_path(@user.id)
+      
+      # ユーザー情報を編集する
+      fill_in 'nickname', with: "#{@user.nickname}2"
+      fill_in 'email', with: "2#{@user.email}"
+
+      # サインアップボタンを押すとユーザーモデルのカウントが上がらないことを確認する
+      expect  do
+        find('input[name="commit"]').click
+      end.to change { User.count }.by(0)
+
+      # トップページへ遷移する
+      expect(current_path).to eq root_path
+      
+      # ログイン後、ユーザー名が変わっていることを確認する
+      expect(page).to have_content("#{@user.nickname}2")
+    end
+  end
+  context 'ユーザー情報が編集できないとき' do
+    it 'ログインしていなければ、ユーザー情報編集画面に遷移できない' do
+      # トップページに移動する
+      visit root_path
+
+      # ユーザー情報編集ページに遷移を試みる
+      visit edit_user_path(@user.id)
+      
+      # 自動的にトップページへ遷移する
+      expect(current_path).to eq root_path
+    end
+
+    it 'ログインしているが、誤った情報では更新できない' do
+      # ログインする
+      sign_in(@user)
+      # ユーザー情報編集ページに遷移する
+      visit edit_user_path(@user.id)
+
+      # ユーザー情報を入力する
+      fill_in 'nickname', with: ''
+      fill_in 'email', with: ''
+
+      # サインアップボタンを押してもユーザーモデルのカウントは上がらないことを確認する
+      expect  do
+        find('input[name="commit"]').click
+      end.to change { User.count }.by(0)
+    end
+  end
+end
