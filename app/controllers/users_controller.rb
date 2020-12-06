@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :move_to_index, only: [:edit]
   def edit
   end
 
@@ -11,6 +12,13 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to root_path
+    end
+  end
+
   def user_params
     params.require(:user).permit(:nickname, :email)
   end
