@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:edit, :update]
+  post '/callback' => 'linebot#callback'
 end
