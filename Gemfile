@@ -73,5 +73,3 @@ gem 'pry-rails'
 gem "aws-sdk-s3", require: false
 gem 'rails-i18n'
 gem "gretel"
-gem 'dotenv-rails' 
-gem 'line-bot-api'
