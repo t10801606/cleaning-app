@@ -12,5 +12,9 @@ Rails.application.routes.draw do
       get 'clean'
     end
   end
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :update] do
+    member do
+      patch 'notify'
+    end
+  end
 end
