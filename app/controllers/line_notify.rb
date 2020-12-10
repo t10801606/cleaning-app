@@ -1,8 +1,10 @@
 require 'net/http'
 require 'uri'
+require 'suggestions_controller'
 
-class LineNotify < ApplicationController
-  TOKEN = '650bxgXzy7XOGrA2MNfs8zVaE1m2KK5rzfd2JmaiUms'.freeze
+class LineNotify
+  
+  TOKEN = $LINE
   URL = 'https://notify-api.line.me/api/notify'.freeze
 
   attr_reader :message

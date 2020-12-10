@@ -66,6 +66,7 @@ class SuggestionsController < ApplicationController
   end
 
   def notify
+    $LINE = User.find(params[:id]).line_token
     require_relative 'line_notify.rb'
     test = Suggestion.where(status: 0, user_id: current_user.id).pluck(:place)
     if test.empty?
