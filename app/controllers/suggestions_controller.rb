@@ -65,6 +65,17 @@ class SuggestionsController < ApplicationController
     end
   end
 
+  def notify
+    $LINE = User.find(params[:id]).line_token
+    require_relative 'line_notify.rb'
+    test = Suggestion.where(status: 0, user_id: current_user.id).pluck(:place)
+    if test.empty?
+      test ='今日は掃除なしです!'
+    end
+    LineNotify.send(test)
+    redirect_to suggestions_path
+  end
+
   private
 
   def suggestion_params

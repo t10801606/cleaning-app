@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :suggestions, only: [:index, :new, :create, :edit, :update, :destroy] do
     member do
       patch 'finish'
+      get 'notify'
     end
     collection do
       get 'clean'
