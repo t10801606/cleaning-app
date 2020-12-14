@@ -7,7 +7,7 @@
 
 set :output, 'log/cron.log'
 
-every 1.minute do
+every 60.minute do
   runner "Suggestion.update"
 end
 
