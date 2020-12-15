@@ -3,13 +3,17 @@
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
 
+# env :PATH, ENV['PATH']
+# set :output, 'log/cron.log'
+# set :environment, :development
 
+# every 1.days, at: '6:59 pm' do
+#   runner "Suggestion.clean"
+# end
 
-set :output, 'log/cron.log'
-
-every 60.minute do
-  runner "Suggestion.update"
-end
+# every 1.minute do
+#   runner "Suggestion.notify"
+# end
 
 # Example:
 #
